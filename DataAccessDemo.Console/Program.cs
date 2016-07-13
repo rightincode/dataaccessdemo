@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
-using System.Data.Common;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Dapper;
 using System.Data.Sql;
 using System.Data.SqlClient;
-using System.Diagnostics;
 
 namespace DataAccessDemo.Console
 {
@@ -19,7 +14,7 @@ namespace DataAccessDemo.Console
         {
             var readContacts = new List<Contact>();
 
-#region "ADO.NET"
+            #region "ADO.NET"
 
             //using (
             //    var dbConnection =
@@ -44,9 +39,9 @@ namespace DataAccessDemo.Console
             //    }
 
             //}
-#endregion
+            #endregion
 
-#region "Dapper"
+            #region "Dapper"
 
             //using (var dbConnection =
             //    new SqlConnection(ConfigurationManager.ConnectionStrings["dbConnection"].ConnectionString))
@@ -59,13 +54,13 @@ namespace DataAccessDemo.Console
             //    readContacts = readDapperContacts.ToList();
             //}
 
-#endregion
+            #endregion
 
-#region "Entity Framework"
+            #region "Entity Framework"
 
-            readContacts = new ContactEDM().Contacts.ToList();
+            readContacts = new ContactEdm().Contacts.ToList();
 
-#endregion
+            #endregion
 
 
             foreach (Contact currentContact in readContacts)

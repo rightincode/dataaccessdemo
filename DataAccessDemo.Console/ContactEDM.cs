@@ -1,14 +1,11 @@
 namespace DataAccessDemo.Console
 {
-    using System;
     using System.Data.Entity;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Linq;
 
-    public partial class ContactEDM : DbContext
+    public class ContactEdm : DbContext
     {
-        public ContactEDM()
-            : base("name=ContactEDM")
+        public ContactEdm()
+            : base("name=ContactEdm")
         {
         }
 
